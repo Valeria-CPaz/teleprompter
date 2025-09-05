@@ -1,68 +1,262 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
-  margin: 0;
+  min-height: 100vh;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #F5E3E0;
+  /* FUNDO CLARO */
+  font-family: 'Inter', Arial, sans-serif;
+  margin: 0;
   place-items: center;
   min-width: 320px;
-  min-height: 100vh;
 }
 
+/* Não precisa mexer aqui */
+#root {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Títulos escuros */
 h1 {
+  color: #3A3238;
   font-size: 3.2em;
-  line-height: 1.1;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-align: center;
 }
 
+/* Container mantém igual */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.5rem 0;
+  width: 100vw;
+}
+
+/* LABEL DO INPUT */
+.file-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* Botão de upload e botões gerais ESCUROS */
+.file-btn,
 button {
   border-radius: 8px;
-  border: 1px solid transparent;
+  border: 1px solid #D282A6;
   padding: 0.6em 1.2em;
   font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  font-weight: 700;
+  background: #3A3238;
+  color: #F5E3E0;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  margin-top: 0.3em;
+  transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.15s;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.file-btn:hover,
+button:hover {
+  background: #D282A6;
+  color: #3A3238;
+  border-color: #6E4555;
+  transform: scale(1.04);
+}
+
+/* Caixa de input */
+.file-input {
+  margin-bottom: 1rem;
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Texto secundário escuro */
+.file-input-texto,
+.shortcuts {
+  color: #6E4555;
+}
+
+/* Textarea ESCURO */
+.file-input-textarea {
+  width: 100%;
+  font-size: 16px;
+  padding: 8px;
+  border-radius: 6px;
+  background: #3A3238;
+  color: #F5E3E0;
+  border: 1px solid #D282A6;
+  margin-bottom: 0.5rem;
+  resize: vertical;
+}
+
+.file-input-textarea::placeholder {
+  color: #E8B4BC;
+  opacity: 0.8;
+}
+
+/* TELEPROMPTER ESCURO, MENOR, SEM SCROLL NA PÁGINA */
+.teleprompter-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.teleprompter {
+  height: 30vh;
+  /* MENOR */
+  width: 100%;
+  max-width: 600px;
+  margin: 10px 0;
+  overflow-y: auto;
+  background: #3A3238;
+  color: #F5E3E0;
+  font-size: 2rem;
+  padding: 1rem;
+  border: 2px solid #D282A6;
+  border-radius: 8px;
+  box-shadow: 0 4px 32px #000a;
+  line-height: 1.7;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.mirror {
+  transform: scaleX(-1);
+}
+
+/* BOTÕES TODOS JUNTOS E COMPACTOS */
+.controls {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* Atalhos mais legíveis */
+.shortcuts {
+  opacity: 0.8;
+  font-size: 14px;
+  margin-top: 18px;
+  text-align: center;
+}
+
+/* Links, só se usar */
+a {
+  color: #6E4555;
+}
+
+a:hover {
+  color: #D282A6;
+}
+
+/* Estilo pro label + select */
+.fancy-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #F5E3E0;
+  margin-bottom: 12px;
+}
+
+.fancy-select[type="color"] {
+  width: 44px;
+  height: 44px;
+  padding: 2px;
+  border-radius: 8px;
+  background: #3A3238;
+  border: 1.5px solid #6E4555;
+  cursor: pointer;
+  box-shadow: 0 1px 5px 0 #0002;
+}
+
+.fancy-select[type="color"]:hover {
+  border-color: #D282A6;
+  background: #6E4555;
+}
+
+/* Estilo pro select */
+.fancy-select,
+.fancy-select[type="number"],
+.fancy-select[type="color"] {
+  background: #3A3238;
+  min-width: 120px;
+  color: #F5E3E0;
+  border: 1.5px solid #3A3238;
+  border-radius: 12px;
+  padding: 8px 18px;
+  font-size: 1rem;
+  outline: none;
+  box-shadow: 0 1px 5px 0 #3A3238;
+  cursor: pointer;
+}
+
+.fancy-select:focus {
+  border: 2px solid #D282A6;
+  box-shadow: 0 0 0 3px #6E4555;
+}
+
+/* Opcional: hover */
+.fancy-select:hover,
+.fancy-select[type="number"]:hover,
+.fancy-select[type="color"]:hover {
+  border-color: #6E4555;
+  font-size: 1em;
+  font-weight: 700;
+  color: #3A3238;
+  background: #D282A6;
+}
+
+.font-controls-row {
+  display: flex;
+  gap: 16px;
+  /* Espaçamento entre os controles */
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 16px;
+}
+
+.font-controls-row label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1rem;
+  color: #33282e;
+  font-weight: 500;
+}
+
+.fancy-select,
+.font-controls-row input[type="number"] {
+  min-width: 72px;
+  border-radius: 8px;
+  padding: 4px 10px;
+  font-size: 1rem;
+  background: #3A3238;
+  color: #F5E3E0;
+  border: 1.5px solid #6E4555;
+  box-shadow: 0 1px 5px 0 #3A3238;
+}
+
+.font-controls-row input[type="color"] {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: 1.5px solid #3A3238;
+  background: #6E4555;
+  cursor: pointer;
+  padding: 0;
 }

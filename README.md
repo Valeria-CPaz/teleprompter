@@ -1,7 +1,5 @@
 # Teleprompter Web App
 
-[![Deploy na Netlify](https://img.shields.io/netlify/9cf9e2dc-8795-4b85-a977-39368a5fd334?color=6E4555&label=Netlify&logo=netlify&style=flat-square)](https://calm-jalebi-f2d16e.netlify.app/)
-
 Acesse em: 👉 **[https://calm-jalebi-f2d16e.netlify.app/](https://calm-jalebi-f2d16e.netlify.app/)**
 
 ---

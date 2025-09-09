@@ -36,7 +36,6 @@ Access it here: 👉 **[https://calm-jalebi-f2d16e.netlify.app/](https://calm-ja
 
 ```bash
 git clone https://github.com/Valeria-CPaz/teleprompter-web-app.git
-cd seurepo
 npm install
 npm run dev
 ```
@@ -81,6 +80,5 @@ Acesse em: 👉 **[https://calm-jalebi-f2d16e.netlify.app/](https://calm-jalebi-
 
 ```bash
 git clone https://github.com/Valeria-CPaz/teleprompter-web-app.git
-cd seurepo
 npm install
 npm run dev
